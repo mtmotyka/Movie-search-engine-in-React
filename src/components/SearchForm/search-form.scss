@@ -1,0 +1,129 @@
+@import "../../assets/styles/modules/variables";
+@import "../../assets/styles/modules/elements";
+
+.search-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid $color-red;
+        min-width: 300px;
+        color: #fff;
+        font-size: 32px;
+        padding: 0 20px 5px;
+        border-radius: 0;
+        outline: none;
+        appearance: none;
+        font-family: $font-family-base;
+        font-weight: $light;
+        margin-right: 30px;
+
+        &::placeholder {
+            color: #fff;
+            font-size: 32px;
+            font-family: $font-family-base;
+            font-weight: $light;
+        }
+
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            height: 15px;
+            width: 15px;
+            background-image: url(../../assets/icons/ico-cross.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: pointer;
+        }
+    }
+}
+
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 100px -15px 0; 
+
+    &__info-message {
+        text-align: center;
+        font-size: 18px;
+        margin: 0 0 40px 0;
+        font-size: 28px;
+    }
+
+    .single-movie {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex: 0 0 15%;
+        max-width: 15%;
+        margin-bottom: 50px;
+        position: relative;
+        padding: 0 15px;
+
+        &:hover {
+            .single-movie {
+
+                &__poster {
+                    opacity: 0.5;
+                }
+
+                &__button {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &__poster-wrapper {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        &__poster {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+            opacity: 1;
+            transition: opacity .25s;
+            display: block;
+            margin: 0 auto;
+        }
+
+        &__title {
+            margin: 20px 0 5px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        &__date {
+            opacity: 0.3;
+        }
+
+        &__button {
+            opacity: 0;
+            transition: all .25s;
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+        }
+    }
+}

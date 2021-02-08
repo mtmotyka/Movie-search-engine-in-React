@@ -1,0 +1,37 @@
+@import "./variables";
+
+.btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: $regular;
+    font-family: $font-family-base;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0;
+    outline: none;
+    appearance: none;
+    color: #000;
+    border: 1px solid transparent;
+    padding: 15px 45px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .25s;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid #fff;
+        color: #fff;
+        background-color: transparent;
+    }
+
+    &--red {
+        @extend .btn;
+        background-color: $color-red;
+        color: #fff;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}
