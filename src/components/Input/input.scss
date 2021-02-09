@@ -1,0 +1,41 @@
+@import "../../assets/styles/modules/variables";
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $color-red;
+    min-width: 300px;
+    color: #fff;
+    font-size: 32px;
+    padding: 0 20px 5px;
+    border-radius: 0;
+    outline: none;
+    appearance: none;
+    font-family: $font-family-base;
+    font-weight: $light;
+    margin-right: 30px;
+
+    @media (max-width: 767px) {
+        min-width: unset;
+        width: calc(100% - 30px);
+        margin-right: 0;
+    }
+
+    &::placeholder {
+        color: #fff;
+        font-size: 32px;
+        font-family: $font-family-base;
+        font-weight: $light;
+    }
+
+    &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        height: 15px;
+        width: 15px;
+        background-image: url(../../assets/icons/ico-cross.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: pointer;
+    }
+}
