@@ -13,6 +13,7 @@ const Input = (props) => {
     required,
     className,
   } = props;
+
   return (
     <input
       type={type}
